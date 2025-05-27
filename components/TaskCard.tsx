@@ -43,8 +43,8 @@ export function TaskCard({ task, onToggle, onDelete, onEdit }: TaskCardProps) {
         transform: CSS.Transform.toString(transform),
         transition,
         opacity: isDragging ? 0.5 : 1,
-        cursor: 'grab',
         ...cardStyle,
+        cursor: 'grab',
     };
 
 

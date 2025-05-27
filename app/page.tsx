@@ -53,7 +53,6 @@ export default function HomePage() {
     };
 
     setTasks([newTask, ...tasks]);
-    setRecentlyAddedId(newTask.id);
     setInput('');
 
   };
@@ -98,10 +97,7 @@ export default function HomePage() {
     }
   };
 
-  const [recentlyAddedId, setRecentlyAddedId] = useState<string | null>(null);
-
   const [isDragging, setIsDragging] = useState(false);
-
 
   return (
     <>

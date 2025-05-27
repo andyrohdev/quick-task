@@ -108,7 +108,7 @@ export default function HomePage() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <Container size="sm" py="md">
-          <Group mb="md" spacing="sm">
+          <Group mb="md" gap="sm">
             <TextInput
               placeholder="Add a New Task"
               value={input}

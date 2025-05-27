@@ -6,7 +6,7 @@ import Link from 'next/link';
 export function Header() {
   return (
     <Container size="sm" py="md">
-      <Group position="apart" align="center">
+      <Group justify='space-between' align="center">
         <Title order={1}>QuickTask</Title>
         <Button component={Link} href="/about" variant="light" color="blue">
           Learn More

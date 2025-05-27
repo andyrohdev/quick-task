@@ -6,6 +6,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   trailingSlash: true,
+  basePath: '/quick-task',
+  assetPrefix: '/quick-task',
 };
 
 export default nextConfig;

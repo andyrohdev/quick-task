@@ -105,3 +105,155 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.task-scroll-container {
+  max-height: 60vh;
+  min-height: 60vh; /* ✨ Forces consistent height */
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.task-scroll-wrapper {
+  position: relative;
+  max-height: 60vh;
+  min-height: 60vh;
+  margin-top: 1rem;
+}
+
+.task-placeholder {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  font-size: 0.95rem;
+  pointer-events: none;
+  z-index: 0;
+  text-align: center;
+}
+
+.task-scroll-container {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  z-index: 1;
+}
+
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: #000; /* Or your animated background should remain visible underneath */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.intro-title {
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.intro-smoke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(0, 0, 0, 0.5), transparent 60%),
+    radial-gradient(circle at top right, rgba(0, 0, 0, 0.5), transparent 60%),
+    radial-gradient(circle at bottom left, rgba(0, 0, 0, 0.5), transparent 60%),
+    radial-gradient(circle at bottom right, rgba(0, 0, 0, 0.5), transparent 60%);
+  animation: smokeFade 5s ease-in-out forwards;
+}
+
+@keyframes smokeFade {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.skip-btn {
+  margin-top: 2rem;
+  background: transparent;
+  border: 1px solid #666;
+  color: #ccc;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.smoke-overlay {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 20vh;
+  pointer-events: none;
+  z-index: 20;
+  background: radial-gradient(ellipse at 50% 100%, rgba(200,200,200,0.18) 0%, rgba(0,0,0,0.08) 60%, transparent 100%);
+  animation: smokeDrift 8s ease-in-out infinite alternate;
+  opacity: 0.8;
+}
+
+@keyframes smokeDrift {
+  0% {
+    filter: blur(8px);
+    opacity: 0.7;
+    background-position: 50% 100%;
+  }
+  50% {
+    filter: blur(16px);
+    opacity: 1;
+    background-position: 55% 95%;
+  }
+  100% {
+    filter: blur(8px);
+    opacity: 0.7;
+    background-position: 45% 105%;
+  }
+}
+
+.footer-toggle-intro {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10000;
+  user-select: none;
+}
+
+.footer-toggle-intro > div {
+  background: #111;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border: 1px solid #555;
+  transition: background 0.2s;
+}
+.footer-toggle-intro > div:hover {
+  background: #222;
+}

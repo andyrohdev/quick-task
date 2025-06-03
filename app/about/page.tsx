@@ -1,11 +1,10 @@
 'use client';
 
-import { Container, Title, Text, Paper, Divider, Box } from '@mantine/core';
+import { Container, Title, Text, Paper, Divider, Box, Image, Group } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { cardStyle } from '../../styles/theme';
 import Link from 'next/link';
 import { Button } from '@mantine/core';
-
 
 export default function AboutPage() {
     return (
@@ -16,38 +15,51 @@ export default function AboutPage() {
                 transition={{ duration: 0.5 }}
             >
                 <Paper className="glassCard" style={cardStyle} p="xl" shadow="md" radius="md">
-                    <Title order={2} mb="sm">
-                        About QuickTask
-                    </Title>
+
+                    <Group align="center" gap="xs" mb="sm">
+                        <Image
+                            src="/quick-task-logo.png"
+                            alt="QuickTask Icon"
+                            width={50}
+                            height={50}
+                            fit="cover"
+                            radius="sm"
+                            style={{
+                                width: '50px',
+                                height: '50px',
+                                borderRadius: '4px',
+                            }}
+                        />
+                        <Title order={2} mb={0}>
+                            About QuickTask
+                        </Title>
+                    </Group>
 
                     <Divider my="md" />
 
                     <Box>
                         <Text size="md" mb="sm">
-                            <strong>QuickTask</strong> is your friendly, lightning-fast task manager — built to be simple, fast, easy.
+                            <strong>QuickTask</strong> a task manager. A quiet observer. A patient keeper of the things you said you’d do… but haven’t.
                         </Text>
 
                         <Text size="sm" color="dimmed" mb="xs">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-                            vehicula libero nec ullamcorper congue. Duis fringilla sapien, ac
-                            finibus sem. Integer imperdiet, tortor a luctus suscipit, lectus magna
-                            bibendum neque.
+                            Here, tasks don’t vanish. Each one a whisper in the void, reminding you of promises made to yourself.
                         </Text>
 
                         <Text size="sm" color="dimmed">
-                            Aenean sed lorem et augue ultricies efficitur. Morbi pretium nisi non
-                            ex tincidunt, sit amet scelerisque libero dapibus.
+                            Add, Drag, and Complete. QuickTask remembers. Even if you try to forget.
                         </Text>
                     </Box>
+
                     <Button
-                            component={Link}
-                            href="/"
-                            variant="outline"
-                            color="gray"
-                            mt="lg"
-                        >
-                            ← Back to Tasks
-                        </Button>
+                        component={Link}
+                        href="/"
+                        variant="outline"
+                        color="gray"
+                        mt="lg"
+                    >
+                        ← Back to Tasks
+                    </Button>
                 </Paper>
             </motion.div>
         </Container>

@@ -5,6 +5,10 @@ import { MantineWrapper } from '../components/MantineWrapper';
 
 export const metadata = {
   title: 'QuickTask',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
   description: 'Simple task tracker app',
 };
 

@@ -39,7 +39,7 @@ export default function AboutPage() {
 
                     <Box>
                         <Text size="md" mb="sm">
-                            <strong>QuickTask</strong> a task manager. A quiet observer. A patient keeper of the things you said you’d do… but haven’t.
+                            <strong>QuickTask</strong> is a task manager. A quiet observer. A patient keeper of the things you said you’d do… but haven’t.
                         </Text>
 
                         <Text size="sm" color="dimmed" mb="xs">

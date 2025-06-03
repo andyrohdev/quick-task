@@ -7,8 +7,8 @@ export function Header() {
   return (
     <Container size="sm" py="md">
       <Group justify='space-between' align="center">
-        <Title order={1}>QuickTask</Title>
-        <Button component={Link} href="/about" variant="light" color="blue">
+        <Title order={1} style={{ marginTop: "1.5rem" }}>QuickTask</Title>
+        <Button component={Link} href="/about" variant="light" color="blue" style={{ marginTop: "1.5rem" }}>
           Learn More
         </Button>
       </Group>

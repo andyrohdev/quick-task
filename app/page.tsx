@@ -130,27 +130,29 @@ export default function HomePage() {
             onDragEnd={handleDragEnd}
           >
             <SortableContext items={tasks.map((t) => t.id)} strategy={verticalListSortingStrategy}>
-              <Stack>
-                <AnimatePresence initial={false}>
-                  {tasks.map((task) => (
-                    <motion.div
-                      key={task.id}
-                      {...(!isDragging && { layout: true })}
-                      initial={{ opacity: 0, scale: 0.9, y: -10 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                      transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                    >
-                      <TaskCard
-                        task={task}
-                        onToggle={toggleTask}
-                        onDelete={handleDeleteTask}
-                        onEdit={handleEditTask}
-                      />
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
-              </Stack>
+              <div className="task-scroll-container">
+                <Stack>
+                  <AnimatePresence initial={false}>
+                    {tasks.map((task) => (
+                      <motion.div
+                        key={task.id}
+                        {...(!isDragging && { layout: true })}
+                        initial={{ opacity: 0, scale: 0.9, y: -10 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.9, y: 10 }}
+                        transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                      >
+                        <TaskCard
+                          task={task}
+                          onToggle={toggleTask}
+                          onDelete={handleDeleteTask}
+                          onEdit={handleEditTask}
+                        />
+                      </motion.div>
+                    ))}
+                  </AnimatePresence>
+                </Stack>
+              </div>
             </SortableContext>
           </DndContext>
         </Container>

@@ -5,7 +5,7 @@
   --foreground: #171717;
 }
 
-@theme inline {
+:root {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -56,17 +56,52 @@ body {
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
-  transition: all 0.4s ease;
+  transition: border 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  will-change: border, box-shadow, background-color;
 }
+
 
 .glassCard:hover {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow:
-    0 0 16px rgba(255, 255, 255, 0.08),
+    0 0 16px rgba(255, 255, 255, 0.00),
     0 0 32px rgba(255, 255, 255, 0.05),
     inset 0 0 6px rgba(255, 255, 255, 0.02);
 }
 
 
+html, body {
+  background-color: #000; /* Or your dark background */
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
 
+body {
+  margin: 0;
+  color: white; /* optional, if you're in dark theme */
+}
+
+.task-scroll-container {
+  max-height: 60vh;         /* Adjust to desired height */
+  overflow-y: auto;
+  padding-right: 0.5rem;    /* Optional: prevent overlap with scrollbar */
+}
+
+/* Scrollbar styles */
+.task-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.task-scroll-container::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);  /* faint track */
+}
+
+.task-scroll-container::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);  /* scrollbar handle */
+  border-radius: 4px;
+}
+
+.task-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
 

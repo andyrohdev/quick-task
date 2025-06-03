@@ -23,24 +23,27 @@ import {
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+// Define initial tasks outside the component with static IDs
+const initialTasks: Task[] = [
+  {
+    id: 'welcome',
+    title: 'Welcome to QuickTask!',
+    completed: false,
+  },
+  {
+    id: 'add-task',
+    title: 'Add your first task by typing in the input box above and pressing Enter.',
+    completed: false,
+  },
+  {
+    id: 'drag-task',
+    title: 'Try dragging tasks to reorder them.',
+    completed: false,
+  }
+];
+
 export default function HomePage() {
-  const [tasks, setTasks] = useState<Task[]>([
-    {
-      id: uuidv4(),
-      title: 'Welcome to QuickTask!',
-      completed: false,
-    },
-    {
-      id: uuidv4(),
-      title: 'Add your first task by typing in the input box above and pressing Enter.',
-      completed: false,
-    },
-    {
-      id: uuidv4(),
-      title: 'Try dragging tasks to reorder them.',
-      completed: false,
-    }
-  ]);
+  const [tasks, setTasks] = useState<Task[]>(initialTasks);
   const [input, setInput] = useState('');
 
   const handleAddTask = () => {
@@ -54,7 +57,6 @@ export default function HomePage() {
 
     setTasks([newTask, ...tasks]);
     setInput('');
-
   };
 
   const handleEditTask = (id: string, newTitle: string) => {
